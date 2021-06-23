@@ -23,12 +23,14 @@ Route::get('/registration', 'RegiController@index');
 Route::post('/registration', 'RegiController@verify');
 Route::get('/logout', 'LogoutController@index');
 
-Route::get('/home', 'HomeController@index')->name('home.index');
-Route::get('/user/list', 'UserController@index')->name('user.index');
-Route::get('/user/details/{id}', 'UserController@details')->name('user.details');
+Route::group(['middleware' => ['session']], function () {
+    Route::get('/home', 'HomeController@index')->name('home.index');
+    Route::get('/user/list', 'UserController@index')->name('user.index');
+    Route::get('/user/details/{id}', 'UserController@details')->name('user.details');
 
-Route::get('/user/delete/{id}', 'UserController@delete')->name('user.delete');
-Route::get('/user/edit/{id}', 'UserController@edit')->name('user.edit');
-Route::post('/user/edit/{id}', 'UserController@editUser');
-Route::get('/user/create', 'UserController@create')->name('user.create');
-Route::post('/user/create', 'UserController@createUser');
+    Route::get('/user/delete/{id}', 'UserController@delete')->name('user.delete');
+    Route::get('/user/edit/{id}', 'UserController@edit')->name('user.edit');
+    Route::post('/user/edit/{id}', 'UserController@editUser');
+    Route::get('/user/create', 'UserController@create')->name('user.create');
+    Route::post('/user/create', 'UserController@createUser');
+});
