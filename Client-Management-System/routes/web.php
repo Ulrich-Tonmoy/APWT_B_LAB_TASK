@@ -27,4 +27,6 @@ Route::group(['middleware' => ['session']], function () {
     Route::get('/home', 'HomeController@index')->name('home.index');
     Route::get('/system/sales', 'SalesController@index')->name('sales.index');
     Route::get('/system/sales/physical_store', 'SalesController@physical_store')->name('sales.physical_store');
+    Route::get("/system/sales/physical_store/sales_log", 'SalesController@sales_log');
+    Route::post("/system/sales/physical_store/sales_log", 'SalesController@sales_log_store');
 });

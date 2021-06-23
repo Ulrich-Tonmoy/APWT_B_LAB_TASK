@@ -22,5 +22,6 @@
             <td>0</td>
         </tr>
     </table>
+    {{session('msg')}}
 </body>
 </html>

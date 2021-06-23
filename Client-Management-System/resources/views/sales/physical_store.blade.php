@@ -19,10 +19,11 @@
         </tr>
         <tr>
             <td>{{$count}}</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td>{{$weeklyCount}}</td>
+            <td>{{$maxSold}}</td>
+            <td>{{$avgCount}}</td>
         </tr>
     </table>
+    <a href="/system/sales/physical_store/sales_log">View Sales Log</a>
 </body>
 </html>
