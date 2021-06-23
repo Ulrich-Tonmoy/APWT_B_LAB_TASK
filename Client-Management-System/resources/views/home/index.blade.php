@@ -7,6 +7,7 @@
     <title>Home</title>
 </head>
 <body>
+    <a href="/system/sales"> Sales Dashboard</a> | 
     <a href="/logout"> Logout</a>
 </body>
 </html>
